@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>10Living Lifestyle</title>
+
+</head>
+
+<body>
+    <nav>
+        <a href="./">Home</a>
+        <a href="./about.html">About</a>
+    </nav>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <img src="./images/room-1.jpg" alt="Room 1">
+            <img src="./images/room-2.jpg" alt="Room 2">
+            <img src="./images/room-3.jpg" alt="Room 3">
+            <img src="./images/room-4.jpg" alt="Room 4">
+        </div>
+        <div class="overlay">
+            <img src="./images/10LivingLogoHeaderNoBg.png" alt="Text Image" class="text-image">
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="accordion-container">
+        <details>
+            <summary>Join the Waitlist</summary>
+            <form action="#">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="tel" id="phone" placeholder="Phone Number" required>
+                <input type="email" id="email" placeholder="Email" required>
+
+                <select id="apartment-type" required>
+                    <option value="">Select Apartment Type</option>
+                    <option value="Studio">Studio</option>
+                    <option value="1-Bedroom">1-Bedroom</option>
+                    <option value="2-Bedroom">2-Bedroom</option>
+                    <option value="3-Bedroom">3-Bedroom</option>
+                    <option value="4-Bedroom">4-Bedroom</option>
+                </select>
+
+                <select id="budget" required>
+                    <option value="">Select Budget</option>
+                    <option value="Below ₦500,000">Below ₦500,000</option>
+                    <option value="₦500,000-₦1,000,000">₦500,000-₦1,000,000</option>
+                    <option value="₦1,000,000-₦2,000,000">₦1,000,000-₦2,000,000</option>
+                    <option value="Above ₦2,000,000">Above ₦2,000,000</option>
+                </select>
+
+                <input type="text" id="location" placeholder="Location" required>
+
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+
+        </details>
+    </div>
+    <!-- <h1>Experience the 10Living Lifestyle
+    </h1> -->
+    <p class="extratext">
+        As cities evolve, so should the way we live in them.
+        <br>
+        We focus on organizing urban spaces,
+        ensuring efficient layouts, sustainable living, and seamless connectivity to business hubs,
+        transportation, and entertainment.
+    </p>
+
+    <footer class="footer">
+        <p>© 2025 10LIVING Lifestyle</p>
+    </footer>
+
+    <script>
+        let index = 0;
+        function moveSlide(step) {
+            const carousel = document.querySelector('.carousel');
+            index = (index + step + 4) % 4;
+            carousel.style.transform = `translateX(-${index * 100}vw)`;
+        }
+
+        setInterval(() => moveSlide(1), 5000); // Auto-slide every 5 seconds
+    </script>
+</body>
+
+</html>
