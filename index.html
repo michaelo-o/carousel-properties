@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>10Living Lifestyle</title>
+    <title>Carousel Properties</title>
 
 </head>
 
@@ -21,9 +21,10 @@
             <img src="./images/room-2.jpg" alt="Room 2">
             <img src="./images/room-3.jpg" alt="Room 3">
             <img src="./images/room-4.jpg" alt="Room 4">
+            <img src="./images/room-5.jpg" alt="Room 5">
         </div>
         <div class="overlay">
-            <img src="./images/10LivingLogoHeaderNoBg.png" alt="Text Image" class="text-image">
+            <img src="./images/CarouselPropertiesLogo.png" alt="Text Image" class="text-image">
         </div>
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
         <button class="next" onclick="moveSlide(1)">&#10095;</button>
@@ -31,7 +32,7 @@
 
     <div class="accordion-container">
         <details>
-            <summary>Join the Waitlist</summary>
+            <summary>Reserve Your Spot</summary>
             <form action="#">
                 <input type="text" id="name" placeholder="Name" required>
                 <input type="tel" id="phone" placeholder="Phone Number" required>
@@ -61,8 +62,7 @@
 
         </details>
     </div>
-    <!-- <h1>Experience the 10Living Lifestyle
-    </h1> -->
+
     <p class="extratext">
         As cities evolve, so should the way we live in them.
         <br>
@@ -72,18 +72,20 @@
     </p>
 
     <footer class="footer">
-        <p>© 2025 10LIVING Lifestyle</p>
+        <p>© 2025 Carousel Properties</p>
     </footer>
+
 
     <script>
         let index = 0;
         function moveSlide(step) {
             const carousel = document.querySelector('.carousel');
-            index = (index + step + 4) % 4;
+            index = (index + step + 5) % 5;
             carousel.style.transform = `translateX(-${index * 100}vw)`;
         }
 
         setInterval(() => moveSlide(1), 5000); // Auto-slide every 5 seconds
+
     </script>
 </body>
 
